@@ -35,6 +35,13 @@ public class EnderecoService {
 	public Endereco create(@Valid EnderecoDTO objDTO) {
 		return repository.save(newEndereco(objDTO));
 	}
+	
+	public Endereco update(Integer id, @Valid EnderecoDTO objDTO) {
+		objDTO.setId(id);
+		Endereco oldObj = findById(id);
+		oldObj = newEndereco(objDTO);
+		return repository.save(oldObj);
+	}
 
 	private Endereco newEndereco(EnderecoDTO obj) {
 		Cliente cliente = clienteService.findById(obj.getCliente());
@@ -54,5 +61,7 @@ public class EnderecoService {
 		endereco.setCliente(cliente);
 		return endereco;
 	}
+
+
 
 }
