@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,17 +40,23 @@ public class EnderecoResource {
 		List<EnderecoDTO> listDTO = list.stream().map(obj -> new EnderecoDTO(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<EnderecoDTO> create(@Valid @RequestBody EnderecoDTO objDTO){
-	Endereco obj = service.create(objDTO);
-	URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(obj.getId()).toUri();
-	return ResponseEntity.created(uri).build();
+	public ResponseEntity<EnderecoDTO> create(@Valid @RequestBody EnderecoDTO objDTO) {
+		Endereco obj = service.create(objDTO);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(obj.getId()).toUri();
+		return ResponseEntity.created(uri).build();
 	}
-	
+
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<EnderecoDTO> update(@PathVariable Integer id, @Valid @RequestBody EnderecoDTO objDTO){
+	public ResponseEntity<EnderecoDTO> update(@PathVariable Integer id, @Valid @RequestBody EnderecoDTO objDTO) {
 		Endereco newObj = service.update(id, objDTO);
 		return ResponseEntity.ok().body(new EnderecoDTO(newObj));
+	}
+
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<EnderecoDTO> delete(@PathVariable Integer id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
 	}
 }
