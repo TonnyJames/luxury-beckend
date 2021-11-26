@@ -2,6 +2,8 @@ package com.luxury.domain.dtos;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
 import com.luxury.domain.Endereco;
 import com.luxury.domain.enums.Uf;
 
@@ -15,6 +17,7 @@ private static final long serialVersionUID = 1L;
 	private String complemento;
 	private String cidade;
 	private Uf uf;
+	@NotNull(message = "O Codigo do Cliente deve ser informado")
 	private Integer cliente;
 	private String nomeCliente;
 	
