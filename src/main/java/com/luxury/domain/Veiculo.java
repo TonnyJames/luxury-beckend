@@ -31,10 +31,10 @@ public class Veiculo implements Serializable {
 	private String chassi;
 
 	@Column(unique = true)
-	private String renavan;
+	private String renavam;
 
 	private String combustivel;
-	private String descrição;
+	private String descricao;
 
 	private String vCompra;
 	private Uf uf;
@@ -47,7 +47,7 @@ public class Veiculo implements Serializable {
 	}
 
 //	public Veiculo(Integer id, String marca, String nome, String modelo, String ano, String cor, String placa,
-//			String chassi, String renavan, String combustivel, String descrição, Integer vCompra, Uf uf) {
+//			String chassi, String renavam, String combustivel, String descricao, Integer vCompra, Uf uf) {
 //		super();
 //		this.id = id;
 //		this.marca = marca;
@@ -57,9 +57,9 @@ public class Veiculo implements Serializable {
 //		this.cor = cor;
 //		this.placa = placa;
 //		this.chassi = chassi;
-//		this.renavan = renavan;
+//		this.renavam = renavam;
 //		this.combustivel = combustivel;
-//		this.descrição = descrição;
+//		this.descricao = descricao;
 //		this.vCompra = vCompra;
 //		this.uf = uf;
 //	}
@@ -75,9 +75,9 @@ public class Veiculo implements Serializable {
 		this.cor = obj.getCor();
 		this.placa = obj.getPlaca();
 		this.chassi = obj.getChassi();
-		this.renavan = obj.getRenavan();
+		this.renavam = obj.getRenavam();
 		this.combustivel = obj.getCombustivel();
-		this.descrição = obj.getDescrição();
+		this.descricao = obj.getDescricao();
 		this.vCompra = obj.getvCompra();
 		this.uf = obj.getUf();
 		this.dataCompra = obj.getDataCompra();
@@ -147,12 +147,12 @@ public class Veiculo implements Serializable {
 		this.chassi = chassi;
 	}
 
-	public String getRenavan() {
-		return renavan;
+	public String getRenavam() {
+		return renavam;
 	}
 
-	public void setRenavan(String renavan) {
-		this.renavan = renavan;
+	public void setRenavam(String renavam) {
+		this.renavam = renavam;
 	}
 
 	public String getCombustivel() {
@@ -163,12 +163,12 @@ public class Veiculo implements Serializable {
 		this.combustivel = combustivel;
 	}
 
-	public String getDescrição() {
-		return descrição;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getvCompra() {
@@ -201,7 +201,7 @@ public class Veiculo implements Serializable {
 		int result = 1;
 		result = prime * result + ((chassi == null) ? 0 : chassi.hashCode());
 		result = prime * result + ((placa == null) ? 0 : placa.hashCode());
-		result = prime * result + ((renavan == null) ? 0 : renavan.hashCode());
+		result = prime * result + ((renavam == null) ? 0 : renavam.hashCode());
 		return result;
 	}
 
@@ -224,10 +224,10 @@ public class Veiculo implements Serializable {
 				return false;
 		} else if (!placa.equals(other.placa))
 			return false;
-		if (renavan == null) {
-			if (other.renavan != null)
+		if (renavam == null) {
+			if (other.renavam != null)
 				return false;
-		} else if (!renavan.equals(other.renavan))
+		} else if (!renavam.equals(other.renavam))
 			return false;
 		return true;
 	}

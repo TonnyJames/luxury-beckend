@@ -27,10 +27,10 @@ public class VeiculoDTO implements Serializable{
 	private String chassi;
 
 	@NotNull(message = "O campo RENAVAN é obrigatorio")
-	private String renavan;
+	private String renavam;
 
 	private String combustivel;
-	private String descrição;
+	private String descricao;
 
 	private String vCompra;
 	private Uf uf;
@@ -56,9 +56,9 @@ public class VeiculoDTO implements Serializable{
 		this.cor = obj.getCor();
 		this.placa = obj.getPlaca();
 		this.chassi = obj.getChassi();
-		this.renavan = obj.getRenavan();
+		this.renavam = obj.getRenavam();
 		this.combustivel = obj.getCombustivel();
-		this.descrição = obj.getDescrição();
+		this.descricao = obj.getDescricao();
 		this.vCompra = obj.getvCompra();
 		this.uf = obj.getUf();
 		this.dataCompra = obj.getDataCompra();
@@ -147,13 +147,13 @@ public class VeiculoDTO implements Serializable{
 	}
 
 
-	public String getRenavan() {
-		return renavan;
+	public String getRenavam() {
+		return renavam;
 	}
 
 
-	public void setRenavan(String renavan) {
-		this.renavan = renavan;
+	public void setRenavam(String renavam) {
+		this.renavam = renavam;
 	}
 
 
@@ -167,13 +167,13 @@ public class VeiculoDTO implements Serializable{
 	}
 
 
-	public String getDescrição() {
-		return descrição;
+	public String getDescricao() {
+		return descricao;
 	}
 
 
-	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 
